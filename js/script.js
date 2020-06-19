@@ -153,9 +153,16 @@ window.addEventListener('DOMContentLoaded', () => {
     //smooth scroll
     $(function() {  
         $("html").niceScroll({
-            mousescrollstep: 50,
+            mousescrollstep: 55,
             cursorcolor: '#f47a60',
         });
     });
+    $('.scrollLink').click(function(){
+        var el = $(this).attr('href');
+        el = el.replace(/[^\#]*/, ''); //вытаскиваем id из ссылки
+        $('body,html').animate({
+        scrollTop: $(el).offset().top}, 1000);
+        return false;
+        });
 
 });
