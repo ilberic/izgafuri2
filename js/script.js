@@ -153,8 +153,7 @@ window.addEventListener('DOMContentLoaded', () => {
     //smooth scroll
     $(function() {  
         $("html").niceScroll({
-            mousescrollstep: 30,
-            bouncescroll: true,
+            mousescrollstep: 30
         });
     });     
 });
