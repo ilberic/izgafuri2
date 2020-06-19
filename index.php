@@ -33,7 +33,7 @@
         <div class="shad"></div>
         <form class="contact-form" id="contact-form_1" method="POST" enctype="multipart/form-data">
             <div class="close"></div>
-            <p class="contact-form__title">Оставьте заявку на расчет стоимости</p>
+            <p class="contact-form__title">Оставьте заявку на расчет времени и стоимости</p>
             <p class="contact-form__description"></p>
             <div class="contact-form__input-wrapper">
               <input name="name" type="text" class="contact-form__input contact-form__input_name" placeholder="Введите ваше имя">
@@ -51,7 +51,7 @@
             </div>
            
             <button class="contact-form__button" type="submit"> Оставить заявку </button>
-          </form>
+        </form>
     </header>
 
     <section class="advantages" id="adv">
@@ -203,6 +203,7 @@
     </footer>
     <script src="js/jQuery.js"></script>
     <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="mail/js/mail.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
