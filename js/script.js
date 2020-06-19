@@ -1,8 +1,3 @@
-'use strict';
-// $(window).scroll(function() {
-//     var el = document.getElementsByTagName('body')[0];
-//     el.style.overflow = 'hidden';
-//     });
 window.addEventListener('DOMContentLoaded', () => {
     // slider
     function mySlider (imgPath, nextPath, prevPath)  {
@@ -45,11 +40,18 @@ window.addEventListener('DOMContentLoaded', () => {
     mySlider('.slider3__img3', '.prev3', '.next3');
     mySlider('.slider4__img4', '.prev4', '.next4');
 
-    
+    //smooth anchor
+
+    $('.scrollLink').click(function(){
+        var el = $(this).attr('href');
+        el = el.replace(/[^\#]*/, ''); //вытаскиваем id из ссылки
+        $('body,html').animate({
+        scrollTop: $(el).offset().top}, 1000);
+        return false;
+        });
 
     //portfolio tabs
 
-    'use strict';
     let tab = document.querySelectorAll('.portfolio__wrapper_item'),
         info = document.querySelector('.portfolio__wrapper'),
         tabContent = document.querySelectorAll('.tabContent'),
@@ -81,6 +83,14 @@ window.addEventListener('DOMContentLoaded', () => {
             tab[c].classList.add('active');
         }
     }
+
+    function scrollTab ()   {
+        var ele = $(".portfolio__wrapper_item").attr('href');
+        ele = ele.replace(/[^\#]*/, ''); //вытаскиваем id из ссылки
+        $('body,html').animate({
+        scrollTop: $(ele).offset().top}, 1000);
+        return false;
+        }
     
     info.addEventListener('click',function(event){
         let target = event.target;
@@ -90,6 +100,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     hideTabContent(0);
                     showTabContent(i);
                     anim(i);
+                    scrollTab();
                     break;
                 }
             }
@@ -113,56 +124,14 @@ window.addEventListener('DOMContentLoaded', () => {
         modalForm.style.display = 'none';
         shadow.style.display = "none";
     });
-    //block scroll
-    // var anchor = [];
-    // var currentAnchor = -1;
-    // var isAnimating  = false;
-    // $(function(){
-    //     function updateAnchors() {
-    //         anchor = [];
-    //         $('.anchor').each(function(i, element){
-    //             anchor.push( $(element).offset().top );
-    //         });
-    //     }
-    //     $('body').on('mousewheel', function(e){
-    //         e.preventDefault();
-    //         e.stopPropagation();
-    //         if( isAnimating ) {
-    //             return false;
-    //         }
-    //         isAnimating  = true;
-    //         if( e.originalEvent.wheelDelta >= 0 ) {
-    //             currentAnchor--;
-    //         }else{
-    //             currentAnchor++;
-    //         }
-    //         if( currentAnchor > (anchor.length - 1) 
-    //         || currentAnchor < 0 ) {
-    //             currentAnchor = 0;
-    //         }
-    //         isAnimating  = true;
-    //         $('html, body').animate({
-    //             scrollTop: parseInt( anchor[currentAnchor] )
-    //         }, 1000, 'swing', function(){
-    //             isAnimating  = false;
-    //         });
-    //     });
-    //     updateAnchors();   
-    // });
         
     //smooth scroll
     $(function() {  
-        $("html").niceScroll({
+        $("body").niceScroll({
             mousescrollstep: 55,
             cursorcolor: '#f47a60',
         });
     });
-    $('.scrollLink').click(function(){
-        var el = $(this).attr('href');
-        el = el.replace(/[^\#]*/, ''); //вытаскиваем id из ссылки
-        $('body,html').animate({
-        scrollTop: $(el).offset().top}, 1000);
-        return false;
-        });
+    
 
 });

@@ -25,48 +25,16 @@ hr
     display: block
 .hide
     display: none
-.down
-    background-color: #ffffff00
-    cursor: pointer
-    transition: 1s all
-    position: fixed
-    bottom: 20px    
-    z-index: 9999
-    right: 0
-    &__img
-        height: 80px
-        width: 80px
-        display: block
-        animation: 0.3s tremor ease-out infinite;
-        &:hover
-            animation: 0.1s tremor ease-out infinite;      
 
-@keyframes tremor 
-    0%, 25% 
-        left: -1px;
-        -webkit-transform: translateX(-1%);
-    50%, 100% 
-        left: 1px;
-        -webkit-transform: translateX(1%);
-        transform: translateX(1%);
-    
-     
+#anchor
+    display: block
+    height: 50px
+    width: 50px
+    background: url(../icons/anchor.svg) center center/cover no-repeat
+    position: fixed
+    right: 20px
+    bottom: 20px
+    z-index: 9999   
        
         
-.top
-    background-color: #ffffff00
-    cursor: pointer
-    transition: 1s all
-    position: fixed
-    z-index: 9999
-    right: 0
-    top: 10px
-    &__img
-        height: 80px
-        width: 80px
-        display: block
-        float: right
-        animation: 0.3s tremor ease-out infinite;
-        &:hover
-            animation: 0.1s tremor ease-out infinite;
-    
+
