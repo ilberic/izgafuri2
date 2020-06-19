@@ -153,7 +153,9 @@ window.addEventListener('DOMContentLoaded', () => {
     //smooth scroll
     $(function() {  
         $("html").niceScroll({
-            mousescrollstep: 30
+            mousescrollstep: 50,
+            cursorcolor: '#f47a60',
         });
-    });     
+    });
+
 });
